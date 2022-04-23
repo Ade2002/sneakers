@@ -42,20 +42,6 @@ const Landingpage = () => {
         })
     }
     )
-    /* 
-    const [active, setActive] = useState(0)
-    */
-    /* const showProducts = (index) => {
-        setActive(index)
-        setOpen(0)
-    } */
-
-
-
-
-
-
-
 
 
     return (
