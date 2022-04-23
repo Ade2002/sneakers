@@ -1,5 +1,6 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
+import  './SwipeComponents.scss'
 // Import Swiper styles & Swiper components
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,20 +21,21 @@ const SwipeComponents = () => {
                     disableOnInteraction: false
                 }}
                 modules={[Autoplay, EffectFade]}
-            >{
-
-                    PRODUCTS.map((product, index) => <SwiperSlide key={index}>
-                        {
-                            PRODUCTS.map((product, index) => <ProductsPhotos key={index} {...{ product, index,   /* showProducts */ }} />)
-                        }
+                className="myswiper"
+            >
+                {
+                    PRODUCTS.map((product, index) => 
+                    <SwiperSlide key={product.id}>
+                            <ProductsPhotos key={product.id} {...{ product, index}} />
                     </SwiperSlide>)
                 }
 
-                {/*    Product.map((title, index) =>
+            </Swiper>
+
+            {/*    Product.map((title, index) =>
                     <Landingpage picture={photo} />
                 )
-            } */}
-            </Swiper></>
+            } */}</>
     )
 }
 

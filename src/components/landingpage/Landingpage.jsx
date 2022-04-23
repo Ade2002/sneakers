@@ -2,15 +2,16 @@ import React, { useEffect } from 'react';
 import Style from './sass/style.module.scss';
 import { Link } from "react-router-dom";
 import { PRODUCTS } from './Product';
+import SwipeComponents from './SwipeComponents';
 const Landingpage = () => {
     const ProductsTitles = ({ product, index, }) => <i key={index}>{product.title}</i>
-    const ProductsPhotos = ({ product, index, }) => <img key={index} alt={product.title} src={product.photo} />
+   /*  const ProductsPhotos = ({ product, index, }) => <img key={index} alt={product.title} src={product.photo} /> */
     useEffect(() => {
         document.title = 'Sneakers'
         let lorem = document.getElementById("lorem");
         let text = "Lorem Ipsum has been the industry's standard dummy....";
         let index = 0;
-        const showProducts = (n, slideIndex) => {
+       /*  const showProducts = (n, slideIndex) => {
             var i;
             if (n > ProductsPhotos.length) {
                 slideIndex = 1
@@ -23,7 +24,7 @@ const Landingpage = () => {
             }
 
             ProductsPhotos[slideIndex - 1].style.display = "block";
-        }
+        } */
 
 
 
@@ -35,10 +36,10 @@ const Landingpage = () => {
             }
         }
         setInterval(writeTexts, 150)
-        setInterval(showProducts, 150)
+        /* setInterval(showProducts, 150) */
         window.addEventListener('load', function () {
             writeTexts()
-            showProducts();
+            /* showProducts(); */
         })
     }
     )
@@ -55,9 +56,9 @@ const Landingpage = () => {
                     <Link to='/collections'><button>See More</button></Link>
                 </span>
             </div>
-            {
-                PRODUCTS.map((product, index) => <ProductsPhotos key={index} {...{ product, index,   /* showProducts */ }} />)
-            }
+            <SwipeComponents/>
+          {/*   {
+                PRODUCTS.map((product, index) => <ProductsPhotos key={index} {...{ product, index,   /* showProducts */ }
         </section>
     )
 
