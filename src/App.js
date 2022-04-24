@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "swiper/css/bundle";
 // import BookMark from "./components/Bookmark";
 import Home from "./components/Home";
 import Nav from "./components/Nav";

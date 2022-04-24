@@ -6,7 +6,10 @@
     text-decoration: none;
     list-style-type: none;
 }
-
+::selection {
+    color: #fff;
+    background-color:$sneakerorange;
+}
 html {
     font: {
         family: $fontStack;

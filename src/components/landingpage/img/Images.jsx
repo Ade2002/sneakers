@@ -10,4 +10,4 @@ const Images = {
     appliances,
     gadgets
 }
-export default Images
+export default Images;
