@@ -1,13 +1,16 @@
 @use './'as *;
-.swiper {
-  width:40%;
+
+
+
+.mySwiperTitle {
+  margin-left: -48.7px;
+  width: 40%;
   height: auto;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-
 }
 
 .swiper-slide img {

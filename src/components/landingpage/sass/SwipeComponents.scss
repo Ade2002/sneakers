@@ -1,4 +1,5 @@
-/* @use './'as *; */
+@use './'as *; 
+
 /*
 .swiper {
   width: 100%;
@@ -85,14 +86,18 @@ body {
 
 .swiper {
   width: 100%;
-  height: 100%;
+  @include media($tablet) {
+    width: 40%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -111,6 +116,7 @@ body {
 .swiper-slide img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  align-self: center;
 }
