@@ -38,8 +38,6 @@ const Landingpage = () => {
                 </span>
             </div>
             <SwipeComponents />
-            {/*   {
-                PRODUCTS.map((product, index) => <ProductsPhotos key={index} {...{ product, index,   /* showProducts */ }
         </section>
     )
 
