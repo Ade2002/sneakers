@@ -1,11 +1,11 @@
 @use './'as *;
-
-
-
 .mySwiperTitle {
-  margin-left: -48.7px;
+  margin-left: -5px;
   width: 40%;
   height: auto;
+  @include media($tablet) {
+    margin-left: -48.7px;
+}
 }
 
 .swiper-slide {
