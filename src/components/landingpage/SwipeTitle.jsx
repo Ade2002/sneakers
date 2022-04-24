@@ -1,49 +1,48 @@
 /* import React from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
+import  './sass/swipeTitle.scss'
 // Import Swiper styles & Swiper components
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Autoplay, EffectFade } from "swiper";
-const SwipeComponents = () => {
+import Landingpage from './Landingpage';
+import { PRODUCTS } from './Product';
+const SwipeTitle= () => {
+    const ProductsTitles = ({ product, index, }) => <i key={index}>{product.title}</i>
     return (
         <>
             <Swiper
                 effect={"fade"}
-                autoplay={
-                    {
-                        delay: 100,
-                        disableOnInteraction: false
-                    }
-                }
-                slidesPerView={1}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false
+                }}
                 modules={[Autoplay, EffectFade]}
                 className="myswiper"
             >
                 {
-                    PRODUCTS.map((product, index) =>
-                        <SwiperSlide key={product.id}>
-                            <ProductsPhotos key={product.id} {...{ product, index }} />
-                        </SwiperSlide>)
-                    }
-                    
-                    </Swiper>
-                    
-                    { Product.map((title, index) =>
-                        <Landingpage picture={photo} />
-                        )
-                    } </>
-                    )
+                    PRODUCTS.map((product, index) => 
+                    <SwiperSlide key={product.id}>
+                            <ProductsTitles key={product.id} {...{ product, index}} />
+                    </SwiperSlide>)
                 }
-                
-                export default SwipeComponents */
 
+            </Swiper>
 
-
+            {   Product.map((title, index) =>
+                    <Landingpage picture={photo} />
+                )
+            } 
+        }</>
+        )
+    }
+    
+    export default SwipeTitle 
+    */
 import React, { useRef, useState } from "react";
-import styler from './sass/SwipeComponents.module.scss'
+import './sass/swipeTitle.module.scss'
 import { PRODUCTS } from './Product';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -59,10 +58,10 @@ import "swiper/css/navigation";
 import { Autoplay } from "swiper";
 
 export default function App() {
-    const ProductsPhotos = ({ product, index, }) => <img key={index} alt={product.title} src={product.photo} />
+    const ProductsTitles = ({ product, index, }) => <i key={index}>{product.title}</i>
     return (
         <>
-            <Swiper navigation={false} modules={[ Autoplay]} className={'mySwiper'} effect={"fade"}
+            <Swiper navigation={false} modules={[Autoplay]} className="mySwiper" effect={"fade"}
                 autoplay={
                     {
                         delay: 2000,
@@ -72,9 +71,9 @@ export default function App() {
                 {
                     PRODUCTS.map((product, index) =>
                         <SwiperSlide key={product.id}>
-                            <ProductsPhotos key={product.id} {...{ product, index }} />
+                            <ProductsTitles key={product.id} {...{ product, index }} />
                         </SwiperSlide>)
-                    }
+                }
             </Swiper>
         </>
     );

@@ -3,6 +3,7 @@ import Style from './sass/style.module.scss';
 import { Link } from "react-router-dom";
 import { PRODUCTS } from './Product';
 import SwipeComponents from './SwipeComponents';
+import SwipeTitle from './SwipeTitle';
 const Landingpage = () => {
     const ProductsTitles = ({ product, index, }) => <i key={index}>{product.title}</i>
    /*  const ProductsPhotos = ({ product, index, }) => <img key={index} alt={product.title} src={product.photo} /> */
@@ -48,7 +49,7 @@ const Landingpage = () => {
     return (
         <section className={Style.homesection}>
             <div className={Style.hometext}>
-                <h3 className={Style.bannerText}>Checkout Our New {PRODUCTS.map((product, index) => <ProductsTitles key={index} {...{ product, index, /* showProducts */ }} />)}.</h3>
+                <h3 className={Style.bannerText}>Checkout Our New <SwipeTitle/></h3>
                 <h1 className={Style.mensText}><strong>We  Might Have What You Like..</strong></h1>
                 <p id='lorem' className={`${Style.mobile}`}>  </p>
                 <span>

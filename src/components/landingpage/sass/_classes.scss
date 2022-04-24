@@ -1,6 +1,5 @@
 .mobile {
     display: none;
-
     @include media($tablet) {
         display: block;
     }
@@ -12,7 +11,7 @@
     @include flex(column, center, center);
     padding: 0;
     margin: 0;
-    background: linear-gradient(to bottom right, $sneakerorange, rgba(155, 105, 55, 0.863));
+    background: $bgHome;
 
     @include media($tablet) {
         padding: 0 $paddingsideDesktop;
@@ -143,4 +142,8 @@
     to {
         transform: rotate(360deg);
     }
+}
+.bannerText{
+    display: flex;
+    width: 100%;
 }
